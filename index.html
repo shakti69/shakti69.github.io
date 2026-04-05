@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakti Prasad Hota | Cybersecurity & E-Sports</title>
+
+    <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons for modern sleek icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="cyber-theme">
+
+    <!-- Cyberpunk Background canvas -->
+    <canvas id="particleCanvas"></canvas>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Navbar -->
+    <header class="navbar glass-nav">
+        <h2 class="logo glow-text">SHAKTI<span class="text-accent">x</span>DARKLORD</h2>
+        <nav class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="ph ph-list"></i></button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text reveal reveal-left">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span> System Online
+                </div>
+                <h1 class="hero-title">Shakti Prasad Hota</span></h1>
+                <h4 class="hero-subtitle">
+                    <span class="typing"></span><span class="cursor">|</span>
+                </h4>
+                <p class="hero-description">Passionate about cybersecurity, ethical hacking, and bringing unmatched
+                    energy to e-sports casting. I build secure digital solutions and thrive in the competitive gaming
+                    ecosystem.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary cyber-btn">
+                        <span>View Work</span>
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline cyber-btn-outline">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual reveal reveal-right">
+                <img src="assets/images/profile.png" alt="Profile" id="profileImg"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400/121214/00e5ff?text=SHAKTI';">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header reveal reveal-up">
+            <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+            <div class="cyber-line"></div>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text glass-card reveal reveal-up">
+                <span class="about-kicker">Hello, I'm Shakti 👋</span>
+                <h3 class="about-heading">Tech learner, creative storyteller, and energetic digital creator.</h3>
+
+                <div class="about-highlights">
+                    <span>📍 Dhenkanal, Odisha</span>
+                    <span>🎓 B.Sc Computer Science</span>
+                    <span>🛡️ Cybersecurity Explorer</span>
+                    <span>🎤 E-Sports Caster</span>
+                </div>
+
+                <p>
+                    I am Shakti Prasad Hota, a passionate Computer Science student who enjoys blending technical
+                    learning with creativity. My core interest lies in cybersecurity, where I love exploring ethical
+                    hacking, network security, and the process of building stronger, safer digital systems.
+                </p>
+                <p>
+                    Beyond technology, I also work on creative communication through e-sports casting, video editing,
+                    videography, and script writing. I enjoy turning ideas into content that feels sharp, engaging, and
+                    memorable, whether it is for gaming, storytelling, or personal branding.
+                </p>
+
+                <div class="about-tags">
+                    <span>💻 Web Development</span>
+                    <span>🎬 Video Editing</span>
+                    <span>📹 Videography</span>
+                    <span>✍️ Script Writing</span>
+                    <span>🚀 Skill Growth</span>
+                </div>
+
+                <p class="about-closing">
+                    My goal is to grow into a multi-skilled professional where technology, media, and communication
+                    come together to create meaningful impact.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="activities">
+        <div class="section-header reveal reveal-up">
+            <h2 class="section-title">My <span class="text-accent">Activities</span></h2>
+            <div class="cyber-line"></div>
+        </div>
+
+        <div class="about-grid">
+            <div class="glass-card cyber-card reveal reveal-up delay-1">
+                <div class="card-icon"><i class="ph ph-shield-check"></i></div>
+                <h3>Cybersecurity</h3>
+                <p>Exploring ethical hacking, network security, and vulnerability assessments to build robust
+                    defenses.</p>
+            </div>
+
+            <div class="glass-card cyber-card reveal reveal-up delay-2">
+                <div class="card-icon"><i class="ph ph-game-controller"></i></div>
+                <h3>E-Sports Casting</h3>
+                <p>Delivering energetic play-by-play commentary, in-depth analysis, and hosting gaming events.</p>
+            </div>
+
+            <div class="glass-card cyber-card reveal reveal-up delay-3">
+                <div class="card-icon"><i class="ph ph-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Crafting responsive, modern, and high-performance websites with clean visual layouts.</p>
+            </div>
+
+            <div class="glass-card cyber-card reveal reveal-up delay-4">
+                <div class="card-icon"><i class="ph ph-film-strip"></i></div>
+                <h3>Video Editing</h3>
+                <p>Editing sharp, engaging videos with clean cuts, motion, pacing, and story-driven presentation.</p>
+            </div>
+
+            <div class="glass-card cyber-card reveal reveal-up delay-5">
+                <div class="card-icon"><i class="ph ph-video-camera"></i></div>
+                <h3>Videography</h3>
+                <p>Capturing cinematic visuals, event moments, and creative footage with an eye for framing and energy.</p>
+            </div>
+
+            <div class="glass-card cyber-card reveal reveal-up delay-6">
+                <div class="card-icon"><i class="ph ph-pencil-simple-line"></i></div>
+                <h3>Script Writing</h3>
+                <p>Building clear, engaging scripts for videos, hosting, and storytelling with structure and impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="section-header reveal reveal-up">
+            <h2 class="section-title">My <span class="text-accent">Education</span></h2>
+            <div class="cyber-line"></div>
+        </div>
+
+        <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item left reveal reveal-left">
+                <div class="timeline-dot"></div>
+                <div class="glass-card content">
+                    <span class="timeline-tag tag-completed">Completed</span>
+                    <h3>Higher Secondary (Science)</h3>
+                    <h4>Vidyarathee Residential HSS</h4>
+                    <p>Gained a strong foundation in science and mathematics, paving the way for advanced technical
+                        studies.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item right reveal reveal-right">
+                <div class="timeline-dot"></div>
+                <div class="glass-card content">
+                    <span class="timeline-tag tag-active">Present</span>
+                    <h3>B.Sc in Computer Science</h3>
+                    <h4>Dhenkanal Autonomous College</h4>
+                    <p>Currently deep-diving into programming paradigms, algorithms, databases, and network
+                        fundamentals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-header reveal reveal-up">
+            <h2 class="section-title">Technical <span class="text-accent">Arsenal</span></h2>
+            <div class="cyber-line"></div>
+        </div>
+
+        <div class="skills-grid">
+            <div class="glass-card skill-card reveal reveal-up delay-1">
+                <div class="circular-progress" data-percent="85">
+                    <svg>
+                        <circle cx="60" cy="60" r="50" class="bg-circle"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+                    </svg>
+                    <div class="percent">85%</div>
+                </div>
+                <h3>HTML/CSS</h3>
+            </div>
+
+            <div class="glass-card skill-card reveal reveal-up delay-2">
+                <div class="circular-progress" data-percent="70">
+                    <svg>
+                        <circle cx="60" cy="60" r="50" class="bg-circle"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+                    </svg>
+                    <div class="percent">70%</div>
+                </div>
+                <h3>Kali Linux</h3>
+            </div>
+
+            <div class="glass-card skill-card reveal reveal-up delay-3">
+                <div class="circular-progress" data-percent="95">
+                    <svg>
+                        <circle cx="60" cy="60" r="50" class="bg-circle"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+                    </svg>
+                    <div class="percent">95%</div>
+                </div>
+                <h3>Networking</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-header reveal reveal-up">
+            <h2 class="section-title">Featured <span class="text-accent">Projects</span></h2>
+            <div class="cyber-line"></div>
+        </div>
+
+        <div class="projects-grid">
+            <button class="glass-card project-card reveal reveal-up delay-1" type="button"
+                data-project-title="Smart Attendance"
+                data-project-summary="A WiFi-based automated attendance tracking system designed for modern smart campuses."
+                data-project-description="Smart Attendance is built to automate classroom or campus attendance using WiFi-based presence detection. The idea is to reduce manual work, improve accuracy, and create a faster attendance process for institutions."
+                data-project-stack="WiFi, Networking, Hardware Integration"
+                data-project-impact="Helps save time for teachers, reduces paper-based tracking, and improves daily attendance visibility.">
+                <div class="project-header">
+                    <i class="ph ph-wifi-high text-accent"></i>
+                    <span class="project-link"><i class="ph ph-arrow-up-right"></i></span>
+                </div>
+                <h3>Smart Attendance</h3>
+                <p>A WiFi-based automated attendance tracking system designed for modern smart campuses.</p>
+                <div class="project-tags">
+                    <span>Networking</span>
+                    <span>Hardware</span>
+                </div>
+            </button>
+
+            <button class="glass-card project-card reveal reveal-up delay-2" type="button"
+                data-project-title="Meal Management"
+                data-project-summary="A comprehensive application for managing hostel meals, reducing paper waste and tracking limits."
+                data-project-description="Meal Management is a practical system for organizing hostel or campus meal records. It helps monitor meal usage, manage limits, and keep the process easier for both administrators and students."
+                data-project-stack="Management System, Database, Tracking"
+                data-project-impact="Cuts down manual errors, reduces paper waste, and makes meal planning and record keeping much more reliable.">
+                <div class="project-header">
+                    <i class="ph ph-fork-knife text-accent"></i>
+                    <span class="project-link"><i class="ph ph-arrow-up-right"></i></span>
+                </div>
+                <h3>Meal Management</h3>
+                <p>A comprehensive application for managing hostel meals, reducing paper waste and tracking limits.</p>
+                <div class="project-tags">
+                    <span>Management</span>
+                    <span>Database</span>
+                </div>
+            </button>
+
+            <button class="glass-card project-card reveal reveal-up delay-3" type="button"
+                data-project-title="Cyber Portfolio"
+                data-project-summary="This interactive, performance-optimized website built with a premium cyber-dark aesthetic."
+                data-project-description="Cyber Portfolio is a personal branding website that combines cybersecurity-inspired visuals with a clean, interactive frontend experience. It highlights skills, projects, and contact information in a memorable way."
+                data-project-stack="HTML, CSS, JavaScript, UI/UX"
+                data-project-impact="Creates a strong first impression, showcases technical identity, and gives visitors a clear way to explore work and connect.">
+                <div class="project-header">
+                    <i class="ph ph-user-circle-gear text-accent"></i>
+                    <span class="project-link"><i class="ph ph-arrow-up-right"></i></span>
+                </div>
+                <h3>Cyber Portfolio</h3>
+                <p>This interactive, performance-optimized website built with a premium cyber-dark aesthetic.</p>
+                <div class="project-tags">
+                    <span>UI/UX</span>
+                    <span>Frontend</span>
+                </div>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header reveal reveal-up">
+            <h2 class="section-title">Establish <span class="text-accent">Connection</span></h2>
+            <div class="cyber-line"></div>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info glass-card reveal reveal-left">
+                <h3>Let's Collaborate</h3>
+                <p>Need cybersecurity insights, an energetic e-sports caster, or a web developer? My comms are always
+                    open for the right mission.</p>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="icon-box"><i class="ph ph-envelope-simple"></i></div>
+                        <div class="info-text">
+                            <span class="label">Encrypted Comms Channel</span>
+                            <a href="mailto:shaktiprasadhota07@gmail.com">shaktiprasadhota07@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="ph ph-map-pin"></i></div>
+                        <div class="info-text">
+                            <span class="label">Current Base Location</span>
+                            <span>Dhenkanal, Odisha, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper glass-card reveal reveal-right">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Alias / Name</label>
+                        <input type="text" id="name" placeholder="Enter your designation..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Uplink Email Address</label>
+                        <input type="email" id="email" placeholder="agent@network.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Transmission Payload</label>
+                        <textarea id="message" placeholder="Type your encrypted message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary cyber-btn full-width">
+                        <span>Transmit Message</span>
+                        <i class="ph ph-paper-plane-tilt"></i>
+                    </button>
+                    <!-- Success indicator (hidden by default) -->
+                    <div id="formSuccess" class="form-success tooltip-hidden">
+                        <i class="ph ph-check-circle"></i> Payload transmitted successfully!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2 class="logo glow-text">SHAKTI<span class="text-accent">x</span>DARKLORD</h2>
+                <p>Securing networks. Hyping arenas.</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://youtube.com/@shakti_bajarangi?si=8yWsdrIuK3BTiRo_" target="_blank" aria-label="YouTube"
+                    class="social-icon">
+                    <i class="ph ph-youtube-logo"></i>
+                </a>
+                <a href="https://www.instagram.com/shakti_gamer69?igsh=MW9mbmNoeGFiNmNnaA==" target="_blank"
+                    aria-label="Instagram" class="social-icon">
+                    <i class="ph ph-instagram-logo"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Shakti Prasad Hota. All terminal rights reserved. System Secured.</p>
+        </div>
+    </footer>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+        <div class="project-modal-backdrop" data-modal-close></div>
+        <div class="glass-card project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+            <button class="project-modal-close" type="button" aria-label="Close project popup" data-modal-close>
+                <i class="ph ph-x"></i>
+            </button>
+            <span class="project-details-label">Project Brief</span>
+            <h3 id="projectModalTitle">Project Title</h3>
+            <p id="projectModalSummary">Project summary</p>
+            <p id="projectModalDescription">Project description</p>
+            <div class="project-details-meta">
+                <div>
+                    <span class="meta-heading">Core Stack</span>
+                    <p id="projectModalStack">Project stack</p>
+                </div>
+                <div>
+                    <span class="meta-heading">Impact</span>
+                    <p id="projectModalImpact">Project impact</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor (optional for extra cyber feel) -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
