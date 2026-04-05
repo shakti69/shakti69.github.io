@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. TYPING EFFECT
     // ==========================================
     const typingText = "B.Sc CS Student  | Cybersecurity Enthusiast | E-Sports Caster";
+    const mobileHeroText = "B.Sc CS Student\nCybersecurity Enthusiast\nE-Sports Caster";
     let typeIndex = 0;
 
     function typeEffect() {
@@ -108,8 +109,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Start typing after a short delay
-    setTimeout(typeEffect, 1000);
+    if (typingElement) {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            typingElement.textContent = mobileHeroText;
+        } else {
+            // Start typing after a short delay
+            setTimeout(typeEffect, 1000);
+        }
+    }
 
 
     // ==========================================
