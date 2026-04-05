@@ -1265,6 +1265,15 @@ body.modal-open {
    RESPONSIVE DESIGN 
    ============================== */
 @media (max-width: 968px) {
+    section {
+        padding: 80px 6%;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
@@ -1276,6 +1285,8 @@ body.modal-open {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-right: 0;
+        max-width: 100%;
     }
 
     .hero-title {
@@ -1286,9 +1297,26 @@ body.modal-open {
     .hero-visual {
         order: 1;
         margin-bottom: 20px;
+        justify-content: center;
+        margin-left: 0;
+        width: 100%;
     }
 
     .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-description {
+        max-width: 640px;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-highlights,
+    .about-tags {
         justify-content: center;
     }
 
@@ -1318,9 +1346,20 @@ body.modal-open {
     .project-details-meta {
         grid-template-columns: 1fr;
     }
+
+    .project-modal-dialog {
+        width: min(100%, 680px);
+    }
 }
 
 @media (max-width: 768px) {
+    section {
+        padding: 72px 5%;
+    }
+
+    .navbar {
+        padding: 16px 5%;
+    }
 
     /* Mobile Menu Logic */
     .mobile-menu-btn {
@@ -1356,13 +1395,138 @@ body.modal-open {
         font-size: 2rem;
     }
 
+    .hero {
+        min-height: auto;
+        padding-top: 120px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero-content {
+        gap: 36px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.1rem, 11vw, 3.4rem);
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        width: 100%;
+        gap: 14px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-visual img {
+        width: min(100%, 320px);
+    }
+
+    .about-text {
+        padding: 28px 22px;
+        font-size: 1.02rem;
+    }
+
+    .about-heading {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+
+    .about-highlights,
+    .about-tags {
+        gap: 10px;
+    }
+
+    .about-highlights span,
+    .about-tags span {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     .cyber-card {
         align-items: center;
         text-align: center;
     }
+
+    .project-modal {
+        padding: 14px;
+    }
+
+    .project-modal-dialog {
+        width: 100%;
+        max-height: 88vh;
+        padding: 24px 20px;
+    }
+
+    .project-modal-dialog h3 {
+        font-size: 1.55rem;
+        padding-right: 42px;
+    }
 }
 
 @media (max-width: 480px) {
+    section {
+        padding: 64px 4.5%;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .hero {
+        padding-top: 108px;
+        padding-left: 4.5%;
+        padding-right: 4.5%;
+    }
+
+    .status-badge {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-actions .btn {
+        padding: 13px 18px;
+        font-size: 0.88rem;
+    }
+
+    .about-text {
+        padding: 24px 18px;
+    }
+
+    .about-kicker {
+        font-size: 0.75rem;
+    }
+
+    .about-highlights span,
+    .about-tags span {
+        font-size: 0.88rem;
+    }
+
     .timeline-item {
         padding-left: 60px;
     }
@@ -1377,5 +1541,16 @@ body.modal-open {
         height: 12px;
         width: 12px;
         top: 32px;
+    }
+
+    .project-modal-dialog {
+        padding: 22px 16px;
+    }
+
+    .project-modal-close {
+        top: 14px;
+        right: 14px;
+        width: 38px;
+        height: 38px;
     }
 }
