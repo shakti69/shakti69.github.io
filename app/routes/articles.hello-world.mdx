@@ -1,0 +1,36 @@
+---
+title: 'Building DarkEdge AI: Offline LLMs & Privacy on Android'
+abstract: How I engineered DarkEdge AI — an offline, privacy-first AI assistant built with Flutter, Ollama, and local open-weight language models for Android.
+date: '2024-05-15'
+banner: /static/hello-world-banner.jpg
+---
+
+## Why Offline AI Matters
+
+In a digital landscape dominated by cloud APIs and telemetry, data privacy is paramount. Most modern AI assistants transmit user prompts, documents, and private snippets to remote servers. **DarkEdge AI** was born out of a desire to flip this paradigm: building a fully functional, privacy-focused mobile AI assistant that operates entirely on-device without requiring constant internet access.
+
+![Local AI Architecture](/static/inspiration.png)
+
+## Architecture & Technology Stack
+
+To achieve efficient local inference on mobile hardware, I brought together a lightweight cross-platform stack:
+
+- **Flutter & Dart**: For a fast, responsive user interface across Android devices.
+- **Ollama Engine**: Running local open-weight LLMs (such as Llama 3, Phi-3, and Mistral) with low-quantization models optimized for mobile NPU/CPU.
+- **Local RAG & OCR**: Instant document summarization and text extraction without sending a single byte outside the device.
+
+![App Interface Mockup](/static/clay-mockups.png)
+
+## Overcoming Performance Challenges
+
+Running GGUF quantized models on mobile devices presents unique memory and thermal constraints:
+
+### 1. Memory Management & Quantization
+By leveraging 4-bit and 3-bit GGUF quantization formats, DarkEdge AI minimizes RAM overhead, allowing local LLMs to generate 15+ tokens per second on standard mobile processors without aggressive battery drain.
+
+### 2. Context Window Optimization
+Implementing sliding-window context buffers ensures seamless chat sessions while preserving strict memory bounds.
+
+## What's Next for DarkEdge AI
+
+The future of mobile computing is local intelligence. I'm actively expanding local document embedding, multimodal vision processing, and local vector search. Feel free to explore the project source code on [GitHub](https://github.com/shakti69/DarkEdgeAi)!

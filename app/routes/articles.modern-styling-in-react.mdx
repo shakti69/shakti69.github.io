@@ -1,0 +1,48 @@
+---
+title: 'Building Strikz Esports & High-Performance Network Telemetry'
+abstract: Insights into engineering Strikz Esports and DarkNet Speed Test using Next.js, Supabase, low-latency REST APIs, and modern network diagnostics.
+date: '2024-06-20'
+banner: /static/modern-styling-in-react-banner.jpg
+featured: true
+---
+
+Building modern competitive gaming platforms and real-time network diagnostic applications demands zero-latency response times, robust state management, and reliable data pipelines.
+
+In this article, I share technical learnings from developing **Strikz Esports** (a modern esports tournament platform) and **DarkNet Speed Test** (a network performance tool).
+
+## 1. Real-Time Telemetry & Tournament Engines
+
+For **Strikz Esports**, managing live tournament brackets, player registrations, and match schedules required an architecture capable of real-time state synchronization across thousands of active participants:
+
+```jsx
+// Real-time match state synchronization via Supabase WebSockets
+const useMatchTelemetry = (matchId) => {
+  const [matchData, setMatchData] = useState(null);
+
+  useEffect(() => {
+    const channel = supabase
+      .channel(`match:${matchId}`)
+      .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'matches' }, payload => {
+        setMatchData(payload.new);
+      })
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
+  }, [matchId]);
+
+  return matchData;
+};
+```
+
+## 2. Low-Latency Speed Test Algorithms
+
+For **DarkNet Speed Test**, measuring accurate download/upload throughput, ping jitter, and packet metrics required precision buffer calculations:
+
+- **Multi-threaded HTTP Chunk Downloads**: Utilizing parallel streaming sockets to measure true peak bandwidth.
+- **WebSocket RTT Measurements**: Sub-millisecond ping measurements using lightweight ICMP/HTTP timing probes.
+
+## Summary
+
+Combining modern web frameworks like Next.js and Supabase with optimized networking algorithms makes it possible to deliver desktop-grade experiences directly in the browser and on mobile devices.
+
+Check out [Strikz Esports](https://strikzesports.in) and my GitHub repository [DarkEdge AI](https://github.com/shakti69/DarkEdgeAi) for the full source code and projects!

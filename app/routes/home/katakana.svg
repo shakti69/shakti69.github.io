@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <symbol id="katakana-project" viewBox="0 0 751 136">
+      <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="105" font-weight="900" letter-spacing="18" fill="currentColor" stroke="currentColor" stroke-width="4" paint-order="stroke fill">ダークロード</text>
+    </symbol>
+    <symbol id="katakana-profile" viewBox="0 0 136 766">
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" writing-mode="vertical-rl" font-family="system-ui, -apple-system, sans-serif" font-size="95" font-weight="900" letter-spacing="22" fill="currentColor" stroke="currentColor" stroke-width="4" paint-order="stroke fill">ダークロード</text>
+    </symbol>
+  </defs>
+</svg>
