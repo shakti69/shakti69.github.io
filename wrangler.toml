@@ -1,3 +1,8 @@
-kv_namespaces = [
-  { id = "MY_KV", binding="MY_KV" }
-]
+name = "portfolio"
+pages_build_output_dir = "./build/client"
+
+[vars]
+NODE_VERSION = "20.18.0"
+
+[build]
+command = "npm run build"
