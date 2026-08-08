@@ -3,7 +3,7 @@ import * as build from '../build/server/index.js';
 
 const handler = createPagesFunctionHandler({
   build,
-  getLoadContext: (context) => ({ cloudflare: context }),
+  mode: 'development',
 });
 
 export const onRequest = async (context) => {
