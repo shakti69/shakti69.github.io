@@ -19,7 +19,7 @@ export default async function handleRequest(
     }
   );
 
-  if (isbot(request.headers.get('user-agent') || '')) {
+  if (typeof isbot === 'function' && isbot(request.headers.get('user-agent') || '')) {
     await body.allReady;
   }
 
