@@ -1,4 +1,4 @@
-import { renderToReadableStream } from '@remix-run/cloudflare';
+import { renderToReadableStream } from 'react-dom/server.browser';
 import { RemixServer } from '@remix-run/react';
 import { isbot } from 'isbot';
 
