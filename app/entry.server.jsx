@@ -1,6 +1,10 @@
-import { renderToReadableStream } from 'react-dom/server.browser';
+import ReactDOMServer from 'react-dom/server.browser';
 import { RemixServer } from '@remix-run/react';
 import { isbot } from 'isbot';
+
+const renderToReadableStream =
+  ReactDOMServer.renderToReadableStream ||
+  ReactDOMServer.default?.renderToReadableStream;
 
 export default async function handleRequest(
   request,
