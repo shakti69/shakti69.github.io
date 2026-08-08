@@ -16,6 +16,15 @@ export default defineConfig({
   build: {
     assetsInlineLimit: 1024,
   },
+  ssr: {
+    target: 'webworker',
+    noExternal: true,
+  },
+  resolve: {
+    alias: {
+      'react-dom/server': 'react-dom/server.browser',
+    },
+  },
   server: {
     port: 7777,
   },
