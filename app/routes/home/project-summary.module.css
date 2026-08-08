@@ -150,11 +150,24 @@
 
 .svg {
   opacity: 0;
-  transition: opacity 1200ms ease 1400ms;
-  fill: var(--textTitle);
+  transition: opacity 1200ms ease 1400ms, color 400ms ease, fill 400ms ease, filter 400ms ease;
+  color: var(--textTitle);
+  fill: currentColor;
+
+  :global([data-theme='dark']) & {
+    color: #ffffff;
+    fill: #ffffff;
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.25));
+  }
+
+  :global([data-theme='light']) & {
+    color: #0f172a;
+    fill: #0f172a;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  }
 
   &[data-visible='true'] {
-    opacity: var(--opacity);
+    opacity: var(--opacity, 1);
   }
 
   &[data-device='laptop'] {
