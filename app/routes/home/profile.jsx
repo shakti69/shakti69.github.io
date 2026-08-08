@@ -86,8 +86,24 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
                   alt="Shakti Prasad Hota - Computer Science Student & Cybersecurity Enthusiast"
                 />
-                <svg className={styles.svg} data-visible={visible} viewBox="0 0 136 766">
-                  <use href={`${katakana}#katakana-profile`} />
+                <svg className={styles.svg} data-visible={visible} viewBox="0 0 136 766" aria-hidden="true">
+                  <text
+                    x="50%"
+                    y="50%"
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    writingMode="vertical-rl"
+                    fontFamily="'IPA Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', system-ui, sans-serif"
+                    fontSize="95"
+                    fontWeight="900"
+                    letterSpacing="22"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    paintOrder="stroke fill"
+                  >
+                    ダークロード
+                  </text>
                 </svg>
               </div>
             </div>

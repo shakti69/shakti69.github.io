@@ -51,14 +51,29 @@ export function ProjectSummary({
     return (
       <svg
         type="project"
-        data-visible={visible && modelLoaded}
+        data-visible={visible}
         data-light={theme === 'light'}
-        style={cssProps({ opacity: svgOpacity })}
         className={styles.svg}
         data-device={device}
         viewBox="0 0 751 136"
+        aria-hidden="true"
       >
-        <use href={`${katakana}#katakana-project`} />
+        <text
+          x="50%"
+          y="55%"
+          dominantBaseline="middle"
+          textAnchor="middle"
+          fontFamily="'IPA Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', system-ui, sans-serif"
+          fontSize="105"
+          fontWeight="900"
+          letterSpacing="18"
+          fill="currentColor"
+          stroke="currentColor"
+          strokeWidth="4"
+          paintOrder="stroke fill"
+        >
+          ダークロード
+        </text>
       </svg>
     );
   }
