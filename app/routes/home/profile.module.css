@@ -122,7 +122,7 @@
   bottom: 0;
   height: 100%;
   z-index: var(--zIndex3);
-  opacity: 0;
+  opacity: 0.85;
   transition: opacity var(--durationM) ease var(--durationL), color 400ms ease, fill 400ms ease, filter 400ms ease;
   color: var(--textTitle);
   fill: currentColor;

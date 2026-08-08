@@ -149,7 +149,7 @@
 }
 
 .svg {
-  opacity: 0;
+  opacity: 0.85;
   transition: opacity 1200ms ease 1400ms, color 400ms ease, fill 400ms ease, filter 400ms ease;
   color: var(--textTitle);
   fill: currentColor;
