@@ -394,6 +394,14 @@ const Device = ({
         await modelLoader.loadAsync(url),
       ]);
 
+      if (model.scale) {
+        if (typeof model.scale === 'number') {
+          gltf.scene.scale.setScalar(model.scale);
+        } else if (typeof model.scale === 'object') {
+          gltf.scene.scale.set(model.scale.x, model.scale.y, model.scale.z);
+        }
+      }
+
       modelGroup.current.add(gltf.scene);
 
       gltf.scene.traverse(async node => {

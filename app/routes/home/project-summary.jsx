@@ -196,14 +196,14 @@ export function ProjectSummary({
                 <Suspense>
                   <Model
                     alt={model.alt}
-                    cameraPosition={{ x: 0, y: 0, z: 7.8 }}
+                    cameraPosition={{ x: 0, y: 0, z: 8.5 }}
                     showDelay={500}
                     onLoad={handleModelLoad}
                     show={visible}
                     models={[
                       {
                         ...deviceModels.laptop,
-                        position: { x: -0.6, y: 0.15, z: -0.2 },
+                        position: { x: -0.9, y: 0.1, z: 0 },
                         texture: {
                           ...model.textures[0],
                           sizes: laptopSizes,
@@ -211,7 +211,8 @@ export function ProjectSummary({
                       },
                       {
                         ...deviceModels.phone,
-                        position: { x: 0.9, y: -0.45, z: 0.6 },
+                        position: { x: 1.4, y: -0.45, z: 0.15 },
+                        scale: 0.72,
                         texture: {
                           ...(model.textures[1] || model.textures[0]),
                           sizes: phoneSizes,
