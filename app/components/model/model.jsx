@@ -402,6 +402,16 @@ const Device = ({
         }
       }
 
+      if (model.rotation) {
+        if (typeof model.rotation === 'object') {
+          gltf.scene.rotation.set(
+            model.rotation.x ?? 0,
+            model.rotation.y ?? 0,
+            model.rotation.z ?? 0
+          );
+        }
+      }
+
       modelGroup.current.add(gltf.scene);
 
       gltf.scene.traverse(async node => {
