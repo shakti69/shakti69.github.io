@@ -1,5 +1,6 @@
 export * from './useFormInput';
 export * from './useHasMounted';
+export * from './useHydrated';
 export * from './useInterval';
 export * from './useInViewport';
 export * from './useParallax';
