@@ -55,7 +55,7 @@ export const cleanMaterial = material => {
  * Clean up and dispose of a renderer
  */
 export const cleanRenderer = renderer => {
-  renderer.dispose();
+  renderer?.dispose?.();
   renderer = null;
 };
 

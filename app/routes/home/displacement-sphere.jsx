@@ -51,13 +51,21 @@ export const DisplacementSphere = props => {
   useEffect(() => {
     const { innerWidth, innerHeight } = window;
     mouse.current = new Vector2(0.8, 0.5);
-    renderer.current = new WebGLRenderer({
-      canvas: canvasRef.current,
-      antialias: false,
-      alpha: true,
-      powerPreference: 'high-performance',
-      failIfMajorPerformanceCaveat: true,
-    });
+
+    try {
+      renderer.current = new WebGLRenderer({
+        canvas: canvasRef.current,
+        antialias: false,
+        alpha: true,
+        powerPreference: 'high-performance',
+      });
+    } catch (error) {
+      console.warn('WebGL context creation failed for DisplacementSphere:', error);
+      return;
+    }
+
+    if (!renderer.current) return;
+
     renderer.current.setSize(innerWidth, innerHeight);
     renderer.current.setPixelRatio(1);
     renderer.current.outputColorSpace = LinearSRGBColorSpace;
@@ -94,6 +102,8 @@ export const DisplacementSphere = props => {
   }, []);
 
   useEffect(() => {
+    if (!scene.current) return;
+
     const dirLight = new DirectionalLight(0xffffff, theme === 'light' ? 1.8 : 2.0);
     const ambientLight = new AmbientLight(0xffffff, theme === 'light' ? 2.7 : 0.4);
 
@@ -105,11 +115,15 @@ export const DisplacementSphere = props => {
     lights.current.forEach(light => scene.current.add(light));
 
     return () => {
-      removeLights(lights.current);
+      if (lights.current) {
+        removeLights(lights.current);
+      }
     };
   }, [theme]);
 
   useEffect(() => {
+    if (!renderer.current || !camera.current || !sphere.current) return;
+
     const { width, height } = windowSize;
 
     const adjustedHeight = height + height * 0.3;
@@ -135,6 +149,8 @@ export const DisplacementSphere = props => {
   }, [reduceMotion, windowSize]);
 
   useEffect(() => {
+    if (!renderer.current) return;
+
     const onMouseMove = throttle(event => {
       const position = {
         x: event.clientX / window.innerWidth,
@@ -155,6 +171,8 @@ export const DisplacementSphere = props => {
   }, [isInViewport, reduceMotion, rotationX, rotationY]);
 
   useEffect(() => {
+    if (!renderer.current || !scene.current || !camera.current || !sphere.current) return;
+
     let animation;
 
     const animate = () => {
