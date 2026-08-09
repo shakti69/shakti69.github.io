@@ -88,6 +88,8 @@ export const Model = ({
   const rotationX = useSpring(0, rotationSpringConfig);
   const rotationY = useSpring(0, rotationSpringConfig);
 
+  const [webglSupported, setWebglSupported] = useState(true);
+
   useEffect(() => {
     if (!container.current || !canvas.current) return;
     const { clientWidth, clientHeight } = container.current;
@@ -100,11 +102,19 @@ export const Model = ({
         powerPreference: 'default',
       });
     } catch (error) {
-      console.warn('WebGL context creation failed for Model:', error);
+      console.warn('WebGL context creation failed for Model, using CSS device fallback:', error);
+      setWebglSupported(false);
+      setLoaded(true);
+      onLoad?.();
       return;
     }
 
-    if (!renderer.current) return;
+    if (!renderer.current) {
+      setWebglSupported(false);
+      setLoaded(true);
+      onLoad?.();
+      return;
+    }
 
     renderer.current.setPixelRatio(2);
     renderer.current.setSize(clientWidth, clientHeight);
@@ -345,21 +355,52 @@ export const Model = ({
       aria-label={alt}
       {...rest}
     >
-      <canvas className={styles.canvas} ref={canvas} />
-      {models.map((model, index) => (
-        <Device
-          key={JSON.stringify(model.position)}
-          renderer={renderer}
-          modelGroup={modelGroup}
-          show={show}
-          showDelay={showDelay}
-          renderFrame={renderFrame}
-          index={index}
-          setLoaded={setLoaded}
-          onLoad={onLoad}
-          model={model}
-        />
-      ))}
+      {webglSupported ? (
+        <>
+          <canvas className={styles.canvas} ref={canvas} />
+          {models.map((model, index) => (
+            <Device
+              key={JSON.stringify(model.position)}
+              renderer={renderer}
+              modelGroup={modelGroup}
+              show={show}
+              showDelay={showDelay}
+              renderFrame={renderFrame}
+              index={index}
+              setLoaded={setLoaded}
+              onLoad={onLoad}
+              model={model}
+            />
+          ))}
+        </>
+      ) : (
+        <div className={styles.fallbackWrapper}>
+          {models.map((modelItem, idx) => (
+            <div
+              key={idx}
+              className={styles.fallbackDevice}
+              data-device={
+                models.length > 1
+                  ? idx === 0
+                    ? 'laptop'
+                    : 'phone'
+                  : modelItem.url?.includes('iphone')
+                  ? 'phone'
+                  : 'laptop'
+              }
+              data-index={idx}
+            >
+              <img
+                className={styles.fallbackImage}
+                srcSet={modelItem.texture?.srcSet}
+                src={modelItem.texture?.placeholder}
+                alt={alt || 'Project device mockup'}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

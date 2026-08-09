@@ -47,6 +47,7 @@ export const DisplacementSphere = props => {
   const windowSize = useWindowSize();
   const rotationX = useSpring(0, springConfig);
   const rotationY = useSpring(0, springConfig);
+  const [webglSupported, setWebglSupported] = useState(true);
 
   useEffect(() => {
     const { innerWidth, innerHeight } = window;
@@ -60,11 +61,15 @@ export const DisplacementSphere = props => {
         powerPreference: 'default',
       });
     } catch (error) {
-      console.warn('WebGL context creation failed for DisplacementSphere:', error);
+      console.warn('WebGL context creation failed for DisplacementSphere, using CSS ambient fallback:', error);
+      setWebglSupported(false);
       return;
     }
 
-    if (!renderer.current) return;
+    if (!renderer.current) {
+      setWebglSupported(false);
+      return;
+    }
 
     renderer.current.setSize(innerWidth, innerHeight);
     renderer.current.setPixelRatio(1);
@@ -203,13 +208,22 @@ export const DisplacementSphere = props => {
   return (
     <Transition in timeout={3000} nodeRef={canvasRef}>
       {({ visible, nodeRef }) => (
-        <canvas
-          aria-hidden
-          className={styles.canvas}
-          data-visible={visible}
-          ref={nodeRef}
-          {...props}
-        />
+        <>
+          <canvas
+            aria-hidden
+            className={styles.canvas}
+            data-visible={visible && webglSupported}
+            ref={nodeRef}
+            {...props}
+          />
+          {!webglSupported && (
+            <div
+              aria-hidden
+              className={styles.fallbackSphere}
+              data-visible={visible}
+            />
+          )}
+        </>
       )}
     </Transition>
   );

@@ -11,3 +11,75 @@
     opacity: 1;
   }
 }
+
+.fallbackSphere {
+  position: absolute;
+  right: 10%;
+  top: 18%;
+  width: min(520px, 70vw);
+  height: min(520px, 70vw);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 2.5s var(--bezierFastoutSlowin);
+  background: radial-gradient(
+    circle at 35% 35%,
+    var(--accent) 0%,
+    oklch(60% 0.2 220 / 45%) 40%,
+    oklch(40% 0.15 260 / 20%) 65%,
+    transparent 78%
+  );
+  filter: blur(16px);
+  animation: floatOrb 8s ease-in-out infinite alternate;
+
+  &[data-visible='true'] {
+    opacity: 0.85;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 8%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 30% 30%,
+      oklch(88% 0.12 210 / 60%),
+      transparent 60%
+    );
+    filter: blur(10px);
+    animation: pulseOrb 6s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-28px) scale(1.05) rotate(3deg);
+  }
+  100% {
+    transform: translateY(14px) scale(0.96) rotate(-3deg);
+  }
+}
+
+@keyframes pulseOrb {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.06);
+  }
+}
+
+@media (max-width: 696px) {
+  .fallbackSphere {
+    right: -8%;
+    top: 25%;
+    width: 290px;
+    height: 290px;
+  }
+}
+
