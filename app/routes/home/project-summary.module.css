@@ -94,7 +94,8 @@
   display: grid;
   position: relative;
 
-  &[data-device='laptop'] {
+  &[data-device='laptop'],
+  &[data-device='combo'] {
     top: 6%;
     left: 14%;
 

@@ -133,12 +133,16 @@ export const Home = () => {
         buttonText="Visit Website"
         buttonLink="https://strikzesports.in"
         model={{
-          type: 'laptop',
-          alt: 'Strikz Esports platform dashboard',
+          type: 'combo',
+          alt: 'Strikz Esports platform on laptop and mobile',
           textures: [
             {
               srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
               placeholder: sprTexturePlaceholder,
+            },
+            {
+              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
+              placeholder: gamestackTexturePlaceholder,
             },
           ],
         }}
@@ -148,17 +152,21 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="DarkNet Speed Test"
-        description="A modern network performance & speed testing tool measuring download/upload speed, latency, jitter, and network diagnostics."
-        buttonText="View GitHub"
-        buttonLink="https://github.com/shakti69"
+        title="Primenet Broadband"
+        description="A high-performance SaaS platform for broadband internet management, high-speed fiber services, billing, and customer portal solutions."
+        buttonText="Visit Website"
+        buttonLink="https://www.primenet.strikzesports.in/"
         model={{
-          type: 'phone',
-          alt: 'DarkNet Speed Test application',
+          type: 'combo',
+          alt: 'Primenet Broadband SaaS platform on laptop and mobile',
           textures: [
             {
               srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
               placeholder: sliceTexturePlaceholder,
+            },
+            {
+              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
+              placeholder: gamestackTexture2Placeholder,
             },
           ],
         }}
