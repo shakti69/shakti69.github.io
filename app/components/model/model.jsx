@@ -97,7 +97,7 @@ export const Model = ({
         canvas: canvas.current,
         alpha: true,
         antialias: false,
-        powerPreference: 'high-performance',
+        powerPreference: 'default',
       });
     } catch (error) {
       console.warn('WebGL context creation failed for Model:', error);

@@ -57,7 +57,7 @@ export const DisplacementSphere = props => {
         canvas: canvasRef.current,
         antialias: false,
         alpha: true,
-        powerPreference: 'high-performance',
+        powerPreference: 'default',
       });
     } catch (error) {
       console.warn('WebGL context creation failed for DisplacementSphere:', error);
