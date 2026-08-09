@@ -10,6 +10,9 @@ import sliceTexture from '~/assets/slice-app.jpg';
 import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import primenetLaptopTexture from '~/assets/primenet-laptop.png';
+import primenetPhoneTexture from '~/assets/primenet-phone.png';
+import strikzPhoneTexture from '~/assets/strikz-phone.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -141,8 +144,8 @@ export const Home = () => {
               placeholder: sprTexturePlaceholder,
             },
             {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
-              placeholder: gamestackTexturePlaceholder,
+              srcSet: `${strikzPhoneTexture} 375w, ${strikzPhoneTexture} 750w`,
+              placeholder: strikzPhoneTexture,
             },
           ],
         }}
@@ -161,12 +164,12 @@ export const Home = () => {
           alt: 'Primenet Broadband SaaS platform on laptop and mobile',
           textures: [
             {
-              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
-              placeholder: sliceTexturePlaceholder,
+              srcSet: `${primenetLaptopTexture} 1280w, ${primenetLaptopTexture} 2560w`,
+              placeholder: primenetLaptopTexture,
             },
             {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
-              placeholder: gamestackTexture2Placeholder,
+              srcSet: `${primenetPhoneTexture} 375w, ${primenetPhoneTexture} 750w`,
+              placeholder: primenetPhoneTexture,
             },
           ],
         }}

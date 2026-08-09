@@ -94,8 +94,7 @@
   display: grid;
   position: relative;
 
-  &[data-device='laptop'],
-  &[data-device='combo'] {
+  &[data-device='laptop'] {
     top: 6%;
     left: 14%;
 
@@ -105,6 +104,22 @@
 
     @media (--mediaTablet) {
       --width: 140%;
+
+      top: 10%;
+      left: 0;
+    }
+  }
+
+  &[data-device='combo'] {
+    top: 6%;
+    left: 0;
+
+    @media (--mediaDesktop) {
+      --width: 160%;
+    }
+
+    @media (--mediaTablet) {
+      --width: 130%;
 
       top: 10%;
       left: 0;
