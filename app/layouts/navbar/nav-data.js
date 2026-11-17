@@ -2,8 +2,16 @@ import config from '~/config.json';
 
 export const navLinks = [
   {
-    label: 'Projects',
+    label: 'Featured',
     pathname: '/#project-1',
+  },
+  {
+    label: 'Quick Links',
+    pathname: '/#quick-links',
+  },
+  {
+    label: 'All Projects',
+    pathname: '/#all-projects',
   },
   {
     label: 'Details',

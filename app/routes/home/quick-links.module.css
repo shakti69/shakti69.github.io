@@ -1,0 +1,197 @@
+.quickLinks {
+  width: 100vw;
+  min-height: auto;
+  padding-top: var(--space5XL);
+  padding-bottom: var(--space4XL);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+
+  @media (--mediaTablet) {
+    padding-top: var(--space4XL);
+    padding-bottom: var(--space3XL);
+  }
+
+  @media (--mediaMobile), (--mediaMobileLS) {
+    padding-right: var(--spaceOuter);
+    padding-left: var(--spaceOuter);
+    padding-top: var(--space3XL);
+    padding-bottom: var(--space3XL);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxWidthL);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space3XL);
+  padding: 0 var(--spaceOuter);
+
+  @media (--mediaMobile) {
+    padding: 0;
+    gap: var(--space2XL);
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spaceM);
+}
+
+.tagWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spaceM);
+}
+
+.tag {
+  font-family: var(--fontStack);
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightBold);
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0;
+  transform: translate3d(0, var(--spaceS), 0);
+  transition: opacity var(--durationM) ease, transform var(--durationM) ease;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.title {
+  margin: 0;
+  opacity: 0;
+  transform: translate3d(0, var(--spaceM), 0);
+  transition: opacity var(--durationL) ease 100ms, transform var(--durationL) ease 100ms;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.subtitle {
+  color: var(--textSecondary);
+  max-width: 620px;
+  margin: 0;
+  opacity: 0;
+  transform: translate3d(0, var(--spaceM), 0);
+  transition: opacity var(--durationL) ease 200ms, transform var(--durationL) ease 200ms;
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spaceXL);
+  width: 100%;
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+    gap: var(--spaceL);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space2XL);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--background) 70%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s var(--bezierFastoutSlowin),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease,
+              opacity var(--durationXL) ease var(--delay, 0ms);
+  opacity: 0;
+  transform: translateY(24px);
+
+  &[data-visible='true'] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+    box-shadow: 0 20px 48px -12px color-mix(in srgb, var(--primary) 20%, transparent);
+  }
+
+  @media (--mediaMobile) {
+    padding: var(--spaceXL);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spaceM);
+  margin-bottom: var(--spaceM);
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-family: var(--fontStackCode, monospace);
+  font-size: var(--fontSizeBodyXS, 12px);
+  font-weight: var(--fontWeightBold);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  border: 1px solid;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.category {
+  font-size: var(--fontSizeBodyS);
+  color: var(--textTertiary, #888);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cardTitle {
+  font-size: var(--fontSizeHeadingS, 24px);
+  font-weight: var(--fontWeightBold);
+  margin: 0 0 var(--spaceS) 0;
+  color: var(--text);
+}
+
+.cardDescription {
+  font-size: var(--fontSizeBodyM);
+  line-height: var(--lineHeightBody);
+  color: var(--textSecondary);
+  margin: 0 0 var(--space2XL) 0;
+  flex-grow: 1;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spaceM);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.primaryBtn {
+  flex-shrink: 0;
+}
+
+.secondaryBtn {
+  flex-shrink: 0;
+}

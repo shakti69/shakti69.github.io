@@ -287,6 +287,10 @@
 }
 
 .button {
+  display: flex;
+  gap: var(--spaceM);
+  flex-wrap: wrap;
+  align-items: center;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);

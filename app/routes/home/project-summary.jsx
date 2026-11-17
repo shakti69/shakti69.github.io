@@ -27,6 +27,8 @@ export function ProjectSummary({
   model,
   buttonText,
   buttonLink,
+  secondaryButtonText,
+  secondaryButtonLink,
   alternate,
   ...rest
 }) {
@@ -107,6 +109,11 @@ export function ProjectSummary({
           <Button iconHoverShift href={buttonLink} iconEnd="arrow-right">
             {buttonText}
           </Button>
+          {secondaryButtonLink && (
+            <Button secondary iconHoverShift href={secondaryButtonLink} iconEnd="chevron-right">
+              {secondaryButtonText}
+            </Button>
+          )}
         </div>
       </div>
     );

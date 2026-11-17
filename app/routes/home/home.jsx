@@ -7,19 +7,21 @@ import gamestackTexture from '~/assets/gamestack-login.jpg';
 import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
-import primenetLaptopTexture from '~/assets/primenet-laptop.png';
-import primenetPhoneTexture from '~/assets/primenet-phone.png';
 import strikzPhoneTexture from '~/assets/strikz-phone.png';
+import darkmusicTexture1 from '~/assets/darkmusic-mobile-1.webp';
+import darkmusicTexture2 from '~/assets/darkmusic-mobile-2.webp';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
 import { Profile } from './profile';
 import { ProjectSummary } from './project-summary';
+import { QuickLinks } from './quick-links';
+import { AllProjects } from './all-projects';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
 
-// Prefetch draco decoader wasm
+// Prefetch draco decoder wasm
 export const links = () => {
   return [
     {
@@ -50,13 +52,15 @@ export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
+  const quickLinks = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const allProjects = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, quickLinks, projectOne, projectTwo, projectThree, allProjects, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -80,10 +84,14 @@ export const Home = () => {
     );
 
     sections.forEach(section => {
-      sectionObserver.observe(section.current);
+      if (section.current) {
+        sectionObserver.observe(section.current);
+      }
     });
 
-    indicatorObserver.observe(intro.current);
+    if (intro.current) {
+      indicatorObserver.observe(intro.current);
+    }
 
     return () => {
       sectionObserver.disconnect();
@@ -98,6 +106,11 @@ export const Home = () => {
         sectionRef={intro}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
+      <QuickLinks
+        id="quick-links"
+        sectionRef={quickLinks}
+        visible={visibleSections.includes(quickLinks.current)}
+      />
       <ProjectSummary
         id="project-1"
         sectionRef={projectOne}
@@ -107,6 +120,8 @@ export const Home = () => {
         description="An offline, privacy-focused AI assistant designed to run AI models locally for document processing, writing, coding assistance, and OCR."
         buttonText="View GitHub"
         buttonLink="https://github.com/shakti69/DarkEdgeAi"
+        secondaryButtonText="Download APK"
+        secondaryButtonLink="https://github.com/shakti69/DarkEdgeAi/releases/download/v1.20.9/DarkEdge.AI.v1.20.9.apk"
         model={{
           type: 'phone',
           alt: 'DarkEdge AI app interface',
@@ -128,6 +143,32 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
+        title="DarkMusic"
+        description="Audiophile-grade offline & cloud music player engineered with Jetpack Compose 120 FPS UI, synchronized lyrics, gapless audio, and lossless playback."
+        buttonText="Download APK"
+        buttonLink="https://github.com/shakti69/DarkMusic/raw/main/DarkMusic.apk"
+        secondaryButtonText="View GitHub"
+        secondaryButtonLink="https://github.com/shakti69/DarkMusic"
+        model={{
+          type: 'phone',
+          alt: 'DarkMusic mobile player and home interface',
+          textures: [
+            {
+              srcSet: `${darkmusicTexture1} 375w, ${darkmusicTexture1} 750w`,
+              placeholder: darkmusicTexture1,
+            },
+            {
+              srcSet: `${darkmusicTexture2} 375w, ${darkmusicTexture2} 750w`,
+              placeholder: darkmusicTexture2,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-3"
+        sectionRef={projectThree}
+        visible={visibleSections.includes(projectThree.current)}
+        index={3}
         title="Strikz Esports"
         description="A modern esports platform designed for competitive gaming, featuring tournament management, player statistics, and match tracking."
         buttonText="Visit Website"
@@ -147,29 +188,10 @@ export const Home = () => {
           ],
         }}
       />
-      <ProjectSummary
-        id="project-3"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
-        index={3}
-        title="Primenet Broadband"
-        description="A high-performance SaaS platform for broadband internet management, high-speed fiber services, billing, and customer portal solutions."
-        buttonText="Visit Website"
-        buttonLink="https://www.primenet.strikzesports.in/"
-        model={{
-          type: 'combo',
-          alt: 'Primenet Broadband SaaS platform on laptop and mobile',
-          textures: [
-            {
-              srcSet: `${primenetLaptopTexture} 1280w, ${primenetLaptopTexture} 2560w`,
-              placeholder: primenetLaptopTexture,
-            },
-            {
-              srcSet: `${primenetPhoneTexture} 375w, ${primenetPhoneTexture} 750w`,
-              placeholder: primenetPhoneTexture,
-            },
-          ],
-        }}
+      <AllProjects
+        id="all-projects"
+        sectionRef={allProjects}
+        visible={visibleSections.includes(allProjects.current)}
       />
       <Profile
         sectionRef={details}
