@@ -7,7 +7,7 @@ export const navLinks = [
   },
   {
     label: 'Quick Links',
-    pathname: '/projects#quick-links',
+    pathname: '/quick-links',
   },
   {
     label: 'Details',

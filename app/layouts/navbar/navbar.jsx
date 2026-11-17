@@ -125,12 +125,17 @@ export const Navbar = () => {
 
   // Store the current hash to scroll to
   const handleNavItemClick = event => {
-    const hash = event.currentTarget.href.split('#')[1];
-    setTarget(null);
+    try {
+      const url = new URL(event.currentTarget.href, window.location.origin);
+      const hash = url.hash ? url.hash.slice(1) : null;
+      setTarget(null);
 
-    if (hash && location.pathname === '/') {
-      setTarget(`#${hash}`);
-      event.preventDefault();
+      if (hash && url.pathname === '/' && location.pathname === '/') {
+        setTarget(`#${hash}`);
+        event.preventDefault();
+      }
+    } catch {
+      // Allow default navigation
     }
   };
 

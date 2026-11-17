@@ -1,6 +1,5 @@
 import darkmusicTexture1 from '~/assets/darkmusic-mobile-1.webp';
 import darkmusicTexture2 from '~/assets/darkmusic-mobile-2.webp';
-import darkmusicIcon from '~/assets/darkmusic-icon.png';
 import gamestackLogin from '~/assets/gamestack-login.jpg';
 import gamestackList from '~/assets/gamestack-list.jpg';
 import primenetLaptop from '~/assets/primenet-laptop.png';
@@ -12,10 +11,8 @@ import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
 import { Footer } from '~/components/footer';
 import { Heading } from '~/components/heading';
-import { Icon } from '~/components/icon';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
-import { Transition } from '~/components/transition';
 import { baseMeta } from '~/utils/meta';
 import { useState } from 'react';
 import config from '~/config.json';
@@ -23,75 +20,10 @@ import styles from './projects.module.css';
 
 export const meta = () => {
   return baseMeta({
-    title: 'Projects & Platforms',
-    description: `Complete portfolio of ${config.name} — mobile applications, local AI systems, SaaS broadband infrastructure, and competitive esports platforms.`,
+    title: 'All Projects',
+    description: `Detailed showcase of all applications, mobile platforms, and infrastructure projects built by ${config.name} with architecture breakdowns and screenshots.`,
   });
 };
-
-const quickDownloads = [
-  {
-    id: 'dl-darkmusic',
-    title: 'DarkMusic',
-    version: 'v1.5.26 (Latest)',
-    platform: 'Android APK & Windows',
-    description: 'Audiophile music player with 120 FPS UI, synced lyrics, and gapless audio.',
-    primaryAction: {
-      label: 'Download APK',
-      href: 'https://github.com/shakti69/DarkMusic/raw/main/DarkMusic.apk',
-      icon: 'arrow-right',
-    },
-    secondaryAction: {
-      label: 'GitHub',
-      href: 'https://github.com/shakti69/DarkMusic',
-      icon: 'github',
-    },
-    accent: 'rgb(225, 29, 72)',
-  },
-  {
-    id: 'dl-darkedge',
-    title: 'DarkEdge AI',
-    version: 'v1.20.9 (Latest)',
-    platform: 'Android APK (Offline)',
-    description: 'On-device offline AI assistant for document processing, OCR, and coding.',
-    primaryAction: {
-      label: 'Download APK',
-      href: 'https://github.com/shakti69/DarkEdgeAi/releases/download/v1.20.9/DarkEdge.AI.v1.20.9.apk',
-      icon: 'arrow-right',
-    },
-    secondaryAction: {
-      label: 'GitHub',
-      href: 'https://github.com/shakti69/DarkEdgeAi',
-      icon: 'github',
-    },
-    accent: 'rgb(14, 165, 233)',
-  },
-  {
-    id: 'dl-primenet',
-    title: 'Primenet Broadband',
-    version: 'Production SaaS',
-    platform: 'Web Application',
-    description: 'High-speed fiber internet subscription, automated billing, and portal.',
-    primaryAction: {
-      label: 'Open Website',
-      href: 'https://www.primenet.strikzesports.in/',
-      icon: 'arrow-right',
-    },
-    accent: 'rgb(139, 92, 246)',
-  },
-  {
-    id: 'dl-strikz',
-    title: 'Strikz Esports',
-    version: 'Live Platform',
-    platform: 'Web & Mobile Web',
-    description: 'Competitive gaming ecosystem with tournament management & live player stats.',
-    primaryAction: {
-      label: 'Open Website',
-      href: 'https://strikzesports.in',
-      icon: 'arrow-right',
-    },
-    accent: 'rgb(234, 88, 12)',
-  },
-];
 
 const detailedProjects = [
   {
@@ -324,79 +256,10 @@ export function Projects() {
             <span className={styles.tag}>Portfolio Showcase</span>
           </div>
           <Heading level={1} as="h1" className={styles.pageTitle}>
-            <DecoderText text="Projects & Platforms" start delay={300} />
+            <DecoderText text="All Projects & Architectures" start delay={300} />
           </Heading>
           <Text className={styles.pageSubtitle} size="l" as="p">
-            A comprehensive catalog of all my software developments, mobile apps, SaaS systems,
-            and open-source releases with direct downloads, live links, and technical details.
-          </Text>
-        </div>
-      </Section>
-
-      {/* QUICK LINKS & DOWNLOADS ANCHOR SECTION */}
-      <Section id="quick-links" className={styles.quickLinksSection}>
-        <div className={styles.sectionHeader}>
-          <div className={styles.tagWrapper}>
-            <Divider notchWidth="48px" notchHeight="6px" />
-            <span className={styles.tag}>Fast Track</span>
-          </div>
-          <Heading level={2} as="h2" className={styles.sectionTitle}>
-            <DecoderText text="Quick Links & Direct Downloads" start delay={200} />
-          </Heading>
-          <Text className={styles.sectionSubtitle} as="p">
-            Instantly download the latest APK releases or launch live production platforms.
-          </Text>
-        </div>
-
-        <div className={styles.quickGrid}>
-          {quickDownloads.map(item => (
-            <article key={item.id} className={styles.quickCard}>
-              <div className={styles.quickCardTop}>
-                <span className={styles.quickBadge} style={{ borderColor: item.accent }}>
-                  {item.version}
-                </span>
-                <span className={styles.quickPlatform}>{item.platform}</span>
-              </div>
-              <h3 className={styles.quickTitle}>{item.title}</h3>
-              <p className={styles.quickDesc}>{item.description}</p>
-              <div className={styles.quickActions}>
-                <Button
-                  href={item.primaryAction.href}
-                  iconHoverShift
-                  iconEnd={item.primaryAction.icon}
-                  className={styles.primaryBtn}
-                >
-                  {item.primaryAction.label}
-                </Button>
-                {item.secondaryAction && (
-                  <Button
-                    secondary
-                    href={item.secondaryAction.href}
-                    iconHoverShift
-                    icon={item.secondaryAction.icon}
-                    className={styles.secondaryBtn}
-                  >
-                    {item.secondaryAction.label}
-                  </Button>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      {/* FILTER TABS */}
-      <Section className={styles.catalogSection}>
-        <div className={styles.sectionHeader}>
-          <div className={styles.tagWrapper}>
-            <Divider notchWidth="48px" notchHeight="6px" />
-            <span className={styles.tag}>In-Depth Directory</span>
-          </div>
-          <Heading level={2} as="h2" className={styles.sectionTitle}>
-            <DecoderText text="All Projects & Architectures" start delay={200} />
-          </Heading>
-          <Text className={styles.sectionSubtitle} as="p">
-            Detailed breakdown of system architecture, feature sets, screenshots, and source code.
+            In-depth breakdown of system architectures, real interface screenshots, technical capabilities, and source code for all my software platforms.
           </Text>
 
           <div className={styles.filterBar}>
@@ -430,8 +293,9 @@ export function Projects() {
             </button>
           </div>
         </div>
+      </Section>
 
-        {/* DETAILED PROJECT CARDS WITH REAL PHOTOS */}
+      <Section className={styles.catalogSection}>
         <div className={styles.projectsList}>
           {filteredProjects.map(project => (
             <article key={project.id} className={styles.projectDetailCard}>
@@ -444,7 +308,7 @@ export function Projects() {
                       {project.status}
                     </span>
                   </div>
-                  <h3 className={styles.projectMainTitle}>{project.title}</h3>
+                  <h2 className={styles.projectMainTitle}>{project.title}</h2>
                   <p className={styles.projectSubtitleText}>{project.subtitle}</p>
                 </div>
               </div>
@@ -474,7 +338,7 @@ export function Projects() {
 
                 {project.features && (
                   <div className={styles.featuresBlock}>
-                    <h4 className={styles.featuresHeading}>Core Capabilities & Architecture:</h4>
+                    <h3 className={styles.featuresHeading}>Core Capabilities & Architecture:</h3>
                     <ul className={styles.featuresList}>
                       {project.features.map((feat, fIdx) => (
                         <li key={fIdx} className={styles.featureItem}>
@@ -519,7 +383,7 @@ export function Projects() {
                       secondary
                       href={project.tertiaryAction.href}
                       iconHoverShift
-                      icon={project.tertiaryAction.icon}
+                      iconEnd={project.tertiaryAction.icon}
                     >
                       {project.tertiaryAction.label}
                     </Button>
