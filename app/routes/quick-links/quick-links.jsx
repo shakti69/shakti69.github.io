@@ -95,14 +95,19 @@ const quickLinksList = [
   {
     id: 'primedev',
     title: 'PrimeDev',
-    version: 'Open Source',
-    platform: 'Developer Tools',
-    category: 'Infrastructure & CI/CD',
-    accent: 'rgb(16, 185, 129)',
+    version: 'Live Studio',
+    platform: 'Web Systems & Agency',
+    category: 'Branding & Development',
+    accent: 'rgb(249, 115, 22)',
     description:
-      'Modular full-stack utility toolkit and continuous deployment workflow suite designed for modern web applications, API mocking, and serverless deployments.',
+      'Design and engineering studio architecting iconic brands, scalable web applications, digital packaging, and high-conversion brand systems.',
     primaryAction: {
-      label: 'View on GitHub',
+      label: 'Launch PrimeDev',
+      href: 'https://primedev.pointx.in/',
+      icon: 'arrow-right',
+    },
+    secondaryAction: {
+      label: 'GitHub Repo',
       href: 'https://github.com/shakti69/PrimeDev',
       icon: 'github',
     },

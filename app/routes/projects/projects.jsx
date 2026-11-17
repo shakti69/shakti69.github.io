@@ -6,6 +6,7 @@ import primenetLaptop from '~/assets/primenet-laptop.png';
 import primenetPhone from '~/assets/primenet-phone.png';
 import strikzLaptop from '~/assets/spr-lesson-builder-dark.jpg';
 import strikzPhone from '~/assets/strikz-phone.png';
+import primedevImage from '~/assets/primedev.jpg';
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
@@ -192,21 +193,33 @@ const detailedProjects = [
     id: 'primedev',
     index: '05',
     title: 'PrimeDev',
-    subtitle: 'Full-Stack Developer Utility Library & Cloud Automation',
-    category: 'Developer Tools & Infra',
-    status: 'Open Source',
-    accent: 'rgb(16, 185, 129)',
+    subtitle: 'Design & Engineering Studio for Iconic Brands & Digital Systems',
+    category: 'Digital Studio & Branding',
+    status: 'Production Live',
+    accent: 'rgb(249, 115, 22)',
     description:
-      'A modular full-stack utility toolkit and continuous deployment workflow suite designed to speed up modern web development, API testing, and automated serverless container rollouts.',
+      'PrimeDev is a creative agency and digital engineering studio dedicated to architecting iconic brands without compromise. From custom websites and high-performance applications to packaging, typography, and scalable brand systems, PrimeDev combines strategic design with technical craft to help businesses acquire customers and scale revenue.',
     features: [
-      'Reusable TypeScript core modules for networking, security headers, and data validation',
-      'Zero-dependency API response helpers and error boundary handlers',
-      'Pre-configured CI/CD workflows for automated builds and testing',
+      'Brand Architecture & Visual Identity: Typography systems, custom logotypes, and core brand books',
+      'High-Conversion Web & Mobile Development: Built with modern web frameworks and reactive architectures',
+      'Digital Strategy & Packaging: Packaging design, digital product design, and interactive prototypes',
+      'Seamless Client Consultations: Integrated meeting booking and service tier workflows',
     ],
-    tags: ['TypeScript', 'Node.js', 'Docker', 'CI/CD', 'Open Source'],
-    images: [],
+    tags: ['Next.js', 'React', 'Branding', 'Typography', 'UI/UX Design', 'Digital Agency', 'Web Systems'],
+    images: [
+      {
+        src: primedevImage,
+        alt: 'PrimeDev agency website showcasing branding and typography craft',
+        caption: 'PrimeDev Digital Agency & Brand Architecture Portal',
+      },
+    ],
     primaryAction: {
-      label: 'View on GitHub',
+      label: 'Visit PrimeDev Website',
+      href: 'https://primedev.pointx.in/',
+      icon: 'arrow-right',
+    },
+    secondaryAction: {
+      label: 'View GitHub Repository',
       href: 'https://github.com/shakti69/PrimeDev',
       icon: 'github',
     },
