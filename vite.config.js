@@ -34,6 +34,7 @@ export default defineConfig({
       routes(defineRoutes) {
         return defineRoutes(route => {
           route('/', 'routes/home/route.js', { index: true });
+          route('/projects', 'routes/projects/route.js');
         });
       },
     }),

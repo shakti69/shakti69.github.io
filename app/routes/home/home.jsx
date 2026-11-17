@@ -15,8 +15,6 @@ import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
 import { Profile } from './profile';
 import { ProjectSummary } from './project-summary';
-import { QuickLinks } from './quick-links';
-import { AllProjects } from './all-projects';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
@@ -52,15 +50,13 @@ export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
-  const quickLinks = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
-  const allProjects = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, quickLinks, projectOne, projectTwo, projectThree, allProjects, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -105,11 +101,6 @@ export const Home = () => {
         id="intro"
         sectionRef={intro}
         scrollIndicatorHidden={scrollIndicatorHidden}
-      />
-      <QuickLinks
-        id="quick-links"
-        sectionRef={quickLinks}
-        visible={visibleSections.includes(quickLinks.current)}
       />
       <ProjectSummary
         id="project-1"
@@ -187,11 +178,6 @@ export const Home = () => {
             },
           ],
         }}
-      />
-      <AllProjects
-        id="all-projects"
-        sectionRef={allProjects}
-        visible={visibleSections.includes(allProjects.current)}
       />
       <Profile
         sectionRef={details}
